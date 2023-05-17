@@ -1,6 +1,6 @@
 FROM alpine:3.18
 ENTRYPOINT ["/sbin/tini","--","/usr/local/searxng/dockerfiles/docker-entrypoint.sh"]
-EXPOSE 8080
+EXPOSE 8000
 VOLUME /etc/searxng
 
 ARG SEARXNG_GID=977
