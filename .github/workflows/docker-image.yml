@@ -1,0 +1,19 @@
+name: Docker Image CI
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+    
+    - name: Run container and get URL
+      id: docker_run
+      uses: addnab/docker-run-action@v2.0.0
+      with:
+        image_name: searxng/searxng:latest
+        port_mapping: "80"
+        load_env_file: true
+        url_output_var_name: "url"
